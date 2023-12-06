@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100svh;
+  background-color: rgb(29, 29, 29);
+  padding: 5rem 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: lightgrey;
+}
+
+div {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  cursor: none;
+  position: relative;
+}
+
+div > div{
+    background-image: url("../assets/UltiTV-mouse-illustrations-01.svg");
+    height: 2em;
+    width: 2em;
+
+}
+
+button {
+  grid-area: button;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 50rem;
+  background-color: #63c6a7;
+  border: 3px solid #63c6a7;
+  color: white;
+  font-size: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: unset;
+  color: #63c6a7;
+}
+
+svg {
+  width: 5rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: rotate-animation 6s infinite linear;
+  pointer-events: none  
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
