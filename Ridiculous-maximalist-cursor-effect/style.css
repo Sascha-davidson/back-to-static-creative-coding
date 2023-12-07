@@ -11,6 +11,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  cursor: none;
+  overflow: hidden;
+}
+
+:hover {
+  cursor: none;
 }
 
 h1 {
@@ -27,15 +33,8 @@ div {
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
-  cursor: none;
   position: relative;
-}
-
-div > div{
-    background-image: url("../assets/UltiTV-mouse-illustrations-01.svg");
-    height: 2em;
-    width: 2em;
-
+  /* cursor: none; */
 }
 
 button {
@@ -57,12 +56,19 @@ button:hover {
   color: #63c6a7;
 }
 
+button:active{
+  transform: scale(1.1);
+}
+
 svg {
-  width: 5rem;
   position: absolute;
-  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+#frisbee {
+  width: 4rem;
+  transition: all 0.5s ease-out;
   animation: rotate-animation 6s infinite linear;
-  pointer-events: none  
 }
 
 @keyframes rotate-animation {
@@ -75,4 +81,22 @@ svg {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.cursor {
+  width: 1.5rem;
+  transition: all 0s;
+  z-index: 5;
+}
+
+#cursorHover{
+  display: none;
+}
+
+.active{
+  display: none;
+}
+
+.hover-active{
+  display: block;
 }
