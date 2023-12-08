@@ -1,19 +1,11 @@
 let IDcursor = document.querySelector("#cursor")
 let IDcursorHover = document.querySelector("#cursorHover")
-
 let frisbee = document.querySelector("#frisbee")
-let container = document.querySelector("#container")
-let button = document.querySelector("button")
-
-// 1. cursor follows real cursor
-// 2. frisbee follows cursor but delayed
-// 3. both may not go outside container
-// 4. cursor rotate towards real cursor
 
 function isTouchDevice(){
     try{
         //we try to create touchEvent. It would fail for desktops and throw error
-        Document.createEvent("TatchEvent")
+        document.createEvent("touchevent")
         return true;
     } catch (e){
         return false;
@@ -29,6 +21,9 @@ const move = (e) =>{
     }
     catch(e){}
     //set left and top of svg based om mouse position
+
+    //feedback: Maak gebruik van variable om het in css aan te roepen
+    //feedback: Op deze manier kan je ook gemakelijk de styling op hover elementen aanpassen
     IDcursor.style.left = x + "px";
     IDcursor.style.top = y + "px";
 
@@ -49,7 +44,8 @@ document.addEventListener("touchmove", (e) =>{
     move(e);
 })
 
-function MouseChange(){
-    IDcursor.classList.add("active")
-    IDcursorHover.classList.add("hover-active")
-}
+// 1. cursor follows real cursor            done
+// 2. frisbee follows cursor but delayed    done
+// 3. both may not go outside container
+// 4. cursor rotate towards real cursor
+
