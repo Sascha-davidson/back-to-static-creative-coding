@@ -5,7 +5,7 @@ let frisbee = document.querySelector("#frisbee")
 function isTouchDevice(){
     try{
         //we try to create touchEvent. It would fail for desktops and throw error
-        document.createEvent("touchEvent")
+        window.createEvent("touchEvent")
         return true;
     } catch (e){
         return false;
