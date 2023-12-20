@@ -1,5 +1,6 @@
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("canvas1");
+const canvasBounds = canvas.getBoundingClientRect();
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -21,21 +22,26 @@ class Root {
     if (this.size < this.maxSize) {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = "hsl(140,100%,50%)";
-      // ctx.fill();
+      ctx.fill();
+      ctx.fillStyle = "#313131";
       ctx.stroke();
+      ctx.strokeStyle = "#1E1E1E";
       requestAnimationFrame(this.update.bind(this));
+      ctx.closePath();
     }
   }
 }
 
-window.addEventListener("mousemove", function (e) {
-  const root = new Root(e.x, e.y);
-  root.update(
+document.addEventListener('mousemove', (e)=>{
+  const isOverCanvas = isInBoundingBox(e.pageX, e.pageY, canvasBounds);
+  if(isOverCanvas === false) return;
+  const root = new Root(e.pageX, e.pageY);
+  root.update();
+})
 
+function isInBoundingBox(mouseX, mouseY, canvasBounds){
+  const isInHorizontal = mouseX >= canvasBounds.x && mouseX <= canvasBounds.width;
+  const isInVertical = mouseY >= canvasBounds.y && mouseY <= canvasBounds.height;
 
-
-
-
-  );
-});
+  return isInHorizontal && isInVertical;
+}
