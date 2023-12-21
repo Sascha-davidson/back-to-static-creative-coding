@@ -1,9 +1,14 @@
 /** @type {HTMLCanvasElement} */
+const nav = document.querySelector(".container");
+const navHeight = nav.offsetHeight
 const canvas = document.getElementById("canvas1");
-const canvasBounds = canvas.getBoundingClientRect();
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight - navHeight;
+
+canvas.style.height = canvas.height + "px";
+const canvasBounds = canvas.getBoundingClientRect();
+
 
 class Root {
   constructor(x, y) {
