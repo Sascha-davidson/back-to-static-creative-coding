@@ -25,7 +25,7 @@ header {
   flex-direction: column;
   justify-content: flex-end;
   grid-column: page;
-  height: calc(100vh - 151.33px);
+  height: calc(100vh - 144.33px);
   /* height: 100vh; */
 
 }
@@ -46,7 +46,6 @@ h1 {
 }
 
 h2{
-  color: white;
   font-size: 3rem;
   font-size: clamp(2rem, 5vw, 3rem);
 }
@@ -113,10 +112,16 @@ input[type=search]:is(:hover, :focus){
 }
 
 label{
+  color: white;.title}
+
+.title {
+  text-decoration: none;
+  transition: all .2s ease-in-out;
   color: white;
+
 }
 
-a {
+.portfolio {
   font-size: 1rem;
   text-decoration: none;
   color: #76FF8C;
@@ -127,11 +132,15 @@ a {
   transition: all .2s ease-in-out;
 }
 
-a:is(:hover, :focus){
+.portfolio:is(:hover, :focus){
   background-color: #142c18;
 }
 
-main{
+.title:is(:hover, :focus){
+  color: #76FF8C;
+}
+
+main {
   background-color: black;
   height: 1800px;
   padding: 2rem 10%;
