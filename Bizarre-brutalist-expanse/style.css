@@ -88,7 +88,7 @@ nav{
 nav > div{
   display: flex;
   flex-direction: row-reverse;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -121,12 +121,18 @@ label{
 
 }
 
+
+.title:is(:hover, :focus){
+  color: #76FF8C;
+}
+
 .portfolio {
   font-size: 1rem;
   text-decoration: none;
-  color: #76FF8C;
+  color: black;
   padding: .5rem 1.5rem;
   border: 2px solid #76FF8C;
+  background-color: #76FF8C;
   border-radius: .6rem;
   text-wrap: nowrap;
   transition: all .2s ease-in-out;
@@ -134,11 +140,9 @@ label{
 
 .portfolio:is(:hover, :focus){
   background-color: #142c18;
-}
-
-.title:is(:hover, :focus){
   color: #76FF8C;
 }
+
 
 main {
   background-color: black;
